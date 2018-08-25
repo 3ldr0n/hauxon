@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Emacs files
+\#*#
+*~
+
+# vim temp files
+*.swp
+
+# Binaries
+bin/*
