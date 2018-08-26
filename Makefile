@@ -1,2 +1,13 @@
-cat:
-	gcc malloc_s.c cat.c -o bin/cat
+CC=gcc
+CFLAGS=-std=c11
+DEPS=malloc_s.h
+OBJ=malloc_s.o cat.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+cat: $(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o bin/cat
+
+clean:
+	rm *.o
