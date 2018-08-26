@@ -7,6 +7,7 @@ OBJ=malloc_s.o cat.o
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 cat: $(OBJ)
+	mkdir -p bin
 	$(CC) $(OBJ) $(CFLAGS) -o bin/cat
 
 clean:
