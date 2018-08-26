@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-std=c11
+CFLAGS=-std=c11 -I.
 DEPS=malloc_s.h
 OBJ=malloc_s.o cat.o
 
