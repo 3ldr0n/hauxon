@@ -7,3 +7,13 @@ Creating some coreutils programs
 ```bash
 make
 ```
+
+## To implement
+
+- ls
+- chmod
+- mv
+- echo
+- ln
+- wget
+- ping
