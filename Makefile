@@ -12,4 +12,4 @@ cat:
 	cd src/ && $(CC) $(SRCS) $(CFLAGS) -o ../bin/cat
 
 clean:
-	rm *.o
+	rm -rf bin
