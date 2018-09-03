@@ -13,3 +13,4 @@ cat:
 
 clean:
 	rm *.o
+	rm bin/*
