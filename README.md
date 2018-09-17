@@ -1,6 +1,6 @@
 # hauxon
 
-Creating some coreutils programs
+Creating some coreutils programs.
 
 ## Compiling
 
@@ -15,5 +15,6 @@ make
 - mv
 - echo
 - ln
+- yes
 - wget
 - ping
