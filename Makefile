@@ -8,6 +8,11 @@ YES_SRCS=yes.c
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
+all:
+	mkdir -p bin
+	cd src/ && $(CC) $(CAT_SRCS) $(CFLAGS) -o ../bin/cat
+	cd src/ && $(CC) $(YES_SRCS) $(CFLAGS) -o ../bin/yes
+
 cat:
 	mkdir -p bin
 	cd src/ && $(CC) $(CAT_SRCS) $(CFLAGS) -o ../bin/cat

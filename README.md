@@ -15,6 +15,5 @@ make
 - mv
 - echo
 - ln
-- yes
 - wget
 - ping
