@@ -1,8 +1,9 @@
 #include <stdio.h>
 
+#define PROGRAM "yes"
+
 int main(int argc, char **argv)
 {
-
 	if (argc == 1) {
 		for (;;)
 			printf("y\n");
