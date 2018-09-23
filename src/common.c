@@ -1,4 +1,4 @@
-#include "malloc_s.h"
+#include "common.h"
 
 void *malloc_s(size_t size)
 {

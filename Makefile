@@ -1,8 +1,8 @@
 CC=gcc
 CFLAGS=-std=c11 -Wall -I../include
-DEPS=malloc_s.h
-CAT_OBJ=malloc_s.o cat.o
-CAT_SRCS=malloc_s.c cat.c
+DEPS=common.h
+CAT_OBJ=common.o cat.o
+CAT_SRCS=common.c cat.c
 YES_SRCS=yes.c
 ECHO_SRCS=echo.c
 

@@ -1,4 +1,4 @@
-#include "malloc_s.h"
+#include "common.h"
 
 #define PROGRAM "cat"
 #define MAX_BUFFER_SIZE 32
