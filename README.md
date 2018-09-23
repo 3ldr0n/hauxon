@@ -18,7 +18,6 @@ make cat
 - ls
 - chmod
 - mv
-- echo
 - ln
 - wget
 - ping
