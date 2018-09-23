@@ -19,5 +19,7 @@ make cat
 - chmod
 - mv
 - ln
+- mkdir
+- touch
 - wget
 - ping
