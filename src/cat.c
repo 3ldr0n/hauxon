@@ -1,7 +1,12 @@
+#define _GNU_SOURCE
 #include "common.h"
+#include <string.h>
 
 #define PROGRAM "cat"
 #define MAX_BUFFER_SIZE 32
+
+static FILE *fopen_s(char *filename, char *open_mode);
+static void cat(FILE *in, FILE *out);
 
 static FILE
 *fopen_s(char *filename, char *open_mode)
@@ -16,23 +21,25 @@ static FILE
 	return fp;
 }
 
-static void
-read_file_content(FILE *in, FILE *out)
+static void cat(FILE *in, FILE *out)
 {
-    char *buff = malloc_s(MAX_BUFFER_SIZE);
+	ssize_t read;
+	char *buff = NULL;
+	size_t size = 0;
+	int i = 0;
 
-    size_t size;
-    while ((size = fread(buff, 1, MAX_BUFFER_SIZE, in)) != 0) {
-		fwrite(buff, 1, size, out);
-    }
+	while ((read = getline(&buff, &size, in)) != -1) {
+		fprintf(out, "%s", buff);
+		i++;
+	}
 
-    free(buff);
+	free(buff);
 }
 
 int main(int argc, char **argv)
 {
 	if (argc == 1) {
-		read_file_content(stdin, stdout);
+		cat(stdin, stdout);
 		return 0;
 	}
 
@@ -40,19 +47,27 @@ int main(int argc, char **argv)
 
 	if (argc == 2) {
 		fp = fopen_s(argv[1], "r");
-		read_file_content(fp, stdout);
+		cat(fp, stdout);
 		fclose(fp);
 	} else if (argc == 4) {
+		if (strcmp(">>", argv[2]) != 0) {
+			for (int i=0;i<argc;i++) {
+				fp = fopen_s(argv[i], "r");
+				cat(fp, stdout);
+				fclose(fp);
+			}
+			return 0;
+		}
 		FILE *fpout;
 		fp = fopen_s(argv[1], "r");
 		fpout = fopen_s(argv[3], "r");
-		read_file_content(fp, fpout);
+		cat(fp, fpout);
 		fclose(fpout);
 		fclose(fp);
 	} else {
 		for (int i=1;i<argc;i++) {
 			fp = fopen_s(argv[i], "r");
-			read_file_content(fp, stdout);
+			cat(fp, stdout);
 			fclose(fp);
 		}
 	}
