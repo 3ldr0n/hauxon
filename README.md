@@ -12,3 +12,8 @@ Creating some coreutils programs.
 - touch
 - wget
 - ping
+
+## WIP (Work In Progress)
+
+- cat
+- ls
