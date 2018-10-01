@@ -2,6 +2,10 @@
 
 Creating some coreutils programs.
 
+## Compiler note
+
+I'm using tcc, so make sure to change the compiler in the Makefile.
+
 ## To implement
 
 - ls

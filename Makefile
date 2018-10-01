@@ -1,8 +1,8 @@
-CC=gcc
+CC=tcc
 CFLAGS=-std=c11 -Wall -I../include
-DEPS=common.h
-CAT_OBJ=common.o cat.o
-CAT_SRCS=common.c cat.c
+DEPS=cat.h
+CAT_OBJ=cat.o
+CAT_SRCS=cat.c
 YES_SRCS=yes.c
 ECHO_SRCS=echo.c
 

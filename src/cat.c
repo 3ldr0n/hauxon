@@ -1,12 +1,4 @@
-#define _GNU_SOURCE
-#include "common.h"
-#include <string.h>
-
-#define PROGRAM "cat"
-#define MAX_BUFFER_SIZE 32
-
-static FILE *fopen_s(char *filename, char *open_mode);
-static void cat(FILE *in, FILE *out);
+#include "cat.h"
 
 static FILE
 *fopen_s(char *filename, char *open_mode)
@@ -21,7 +13,8 @@ static FILE
 	return fp;
 }
 
-static void cat(FILE *in, FILE *out)
+static void
+cat(FILE *in, FILE *out, int n)
 {
 	ssize_t read;
 	char *buff = NULL;
@@ -29,47 +22,62 @@ static void cat(FILE *in, FILE *out)
 	int i = 0;
 
 	while ((read = getline(&buff, &size, in)) != -1) {
-		fprintf(out, "%s", buff);
+		if (n)
+			fprintf(out, "%d %s", i, buff);
+		else
+			fprintf(out, "%s", buff);
 		i++;
 	}
 
 	free(buff);
 }
 
-int main(int argc, char **argv)
+void
+usage(void)
 {
-	if (argc == 1) {
-		cat(stdin, stdout);
+	printf("Usage: cat [OPTION].. [FILE]..\n");
+	printf("Concatenate files to standard output.\n");
+	puts("\n");
+	printf(" -n\tnumber output lines\n");
+	printf(" -h\tdisplays this help message\n");
+
+	puts("\n");
+	printf("Example:\n");
+	printf("cat -n TestFile\n");
+}
+
+int
+main(int argc, char **argv)
+{
+
+	int opt;
+	int n = 0;
+
+	while ((opt = getopt(argc, argv, "nh")) != -1) {
+		switch (opt) {
+		case 'n':
+			n = 1;
+			break;
+		case 'h':
+			usage();
+			return 0;
+		default:
+			usage();
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	if (optind >= argc) {
+		cat(stdin, stdout, n);
 		return 0;
 	}
 
-	FILE *fp;
+	argc -= optind;
 
-	if (argc == 2) {
-		fp = fopen_s(argv[1], "r");
-		cat(fp, stdout);
+	for ( ; optind<=argc;optind++) {
+		FILE *fp = fopen_s(argv[optind], "r");
+		cat(fp, stdout, n);
 		fclose(fp);
-	} else if (argc == 4) {
-		if (strcmp(">>", argv[2]) != 0) {
-			for (int i=0;i<argc;i++) {
-				fp = fopen_s(argv[i], "r");
-				cat(fp, stdout);
-				fclose(fp);
-			}
-			return 0;
-		}
-		FILE *fpout;
-		fp = fopen_s(argv[1], "r");
-		fpout = fopen_s(argv[3], "r");
-		cat(fp, fpout);
-		fclose(fpout);
-		fclose(fp);
-	} else {
-		for (int i=1;i<argc;i++) {
-			fp = fopen_s(argv[i], "r");
-			cat(fp, stdout);
-			fclose(fp);
-		}
 	}
 
     return 0;
