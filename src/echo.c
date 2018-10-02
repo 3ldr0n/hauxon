@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #define PROGRAM "echo"
@@ -7,7 +8,14 @@ void usage(void);
 
 void usage(void)
 {
-	printf("Usage:\n");
+	printf("Usage: echo [OPTION]... [STRING]...\n");
+	printf("Display a line of text.\n");
+	puts("\n");
+	printf(" -n\tdo not output the trailing newline\n");
+	printf(" -h\tdisplays this help message\n");
+	puts("\n");
+	printf("Example:\n");
+	printf("echo example message");
 }
 
 int main(int argc, char **argv)
@@ -27,14 +35,18 @@ int main(int argc, char **argv)
 			exit(EXIT_FAILURE);
 		}
 	}
-	if (argc == 1) {
-		printf("\n");
-	} else {
-		for (int i=1;i<argc;i++)
-			printf("%s ", argv[i]);
-		printf("\n");
-	}
-		
 
+	if (optind >= argc)
+		return 0;
+
+	argc -= optind;
+	char **i = &argv[optind];
+
+	for ( ; *i ;i++)
+		printf("%s ", *i);
+
+	if (!n)
+		printf("\n");
+		
 	return 0;
 }

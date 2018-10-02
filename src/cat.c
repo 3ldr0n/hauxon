@@ -19,7 +19,7 @@ cat(FILE *in, FILE *out, int n)
 	ssize_t read;
 	char *buff = NULL;
 	size_t size = 0;
-	int i = 0;
+	int i = 1;
 
 	while ((read = getline(&buff, &size, in)) != -1) {
 		if (n)
@@ -73,9 +73,10 @@ main(int argc, char **argv)
 	}
 
 	argc -= optind;
+	char **i = &argv[optind];
 
-	for ( ; optind<=argc;optind++) {
-		FILE *fp = fopen_s(argv[optind], "r");
+	for ( ; *i ;i++) {
+		FILE *fp = fopen_s(*i, "r");
 		cat(fp, stdout, n);
 		fclose(fp);
 	}
