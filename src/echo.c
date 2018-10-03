@@ -6,7 +6,8 @@
 
 void usage(void);
 
-void usage(void)
+void
+usage(void)
 {
 	printf("Usage: echo [OPTION]... [STRING]...\n");
 	printf("Display a line of text.\n");
@@ -18,7 +19,8 @@ void usage(void)
 	printf("echo example message");
 }
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 	int opt;
 	int n = 0;
@@ -36,8 +38,12 @@ int main(int argc, char **argv)
 		}
 	}
 
-	if (optind >= argc)
+	if (optind >= argc) {
+		if (!n)
+			puts("\n");
 		return 0;
+	}
+
 
 	argc -= optind;
 	char **i = &argv[optind];
