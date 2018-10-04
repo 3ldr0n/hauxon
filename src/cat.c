@@ -35,7 +35,7 @@ cat(FILE *in, FILE *out, int n)
 void
 usage(void)
 {
-	printf("Usage: cat [OPTION].. [FILE]..\n");
+	printf("Usage: cat [OPTION] [FILE]\n");
 	printf("Concatenate files to standard output.\n");
 	puts("\n");
 	printf(" -n\tnumber output lines\n");
