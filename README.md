@@ -4,7 +4,7 @@ Creating some coreutils programs.
 
 ## Compiler note
 
-I'm using tcc, so make sure to change the compiler in the Makefile(or just use tcc).
+I'm using [tcc](https://bellard.org/tcc/), so make sure to change the compiler in the Makefile(or just use tcc).
 
 ## To implement
 
