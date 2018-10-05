@@ -14,7 +14,7 @@ static FILE
 }
 
 static void
-cat(FILE *in, FILE *out, int n)
+cat(FILE *in, int n)
 {
 	ssize_t read;
 	char *buff = NULL;
@@ -23,9 +23,9 @@ cat(FILE *in, FILE *out, int n)
 
 	while ((read = getline(&buff, &size, in)) != -1) {
 		if (n)
-			fprintf(out, "%d %s", i, buff);
+			printf("%d %s", i, buff);
 		else
-			fprintf(out, "%s", buff);
+			printf("%s", buff);
 		i++;
 	}
 
@@ -68,7 +68,7 @@ main(int argc, char **argv)
 	}
 
 	if (optind >= argc) {
-		cat(stdin, stdout, n);
+		cat(stdin, n);
 		return 0;
 	}
 
@@ -77,7 +77,7 @@ main(int argc, char **argv)
 
 	for ( ; *i ;i++) {
 		FILE *fp = fopen_s(*i, "r");
-		cat(fp, stdout, n);
+		cat(fp, n);
 		fclose(fp);
 	}
 

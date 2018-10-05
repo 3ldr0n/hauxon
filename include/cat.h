@@ -9,5 +9,5 @@
 #define MAX_BUFFER_SIZE 32
 
 static FILE *fopen_s(char *filename, char *open_mode);
-static void cat(FILE *in, FILE *out, int n);
+static void cat(FILE *in, int n);
 void usage(void);
