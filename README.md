@@ -8,7 +8,6 @@ I'm using tcc, so make sure to change the compiler in the Makefile(or just use t
 
 ## To implement
 
-- ls
 - chmod
 - mv
 - ln
