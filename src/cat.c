@@ -49,7 +49,6 @@ usage(void)
 int
 main(int argc, char **argv)
 {
-
 	int opt;
 	int n = 0;
 
@@ -74,7 +73,6 @@ main(int argc, char **argv)
 
 	argc -= optind;
 	char **i = &argv[optind];
-
 	for ( ; *i ;i++) {
 		FILE *fp = fopen_s(*i, "r");
 		cat(fp, n);
