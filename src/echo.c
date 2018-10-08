@@ -7,19 +7,6 @@
 
 void usage(void);
 
-void
-usage(void)
-{
-	printf("Usage: echo [OPTION] [STRING]\n");
-	printf("Display a line of text.\n");
-	puts("\n");
-	printf(" -n\tdo not output the trailing newline\n");
-	printf(" -h\tdisplays this help message\n");
-	puts("\n");
-	printf("Example:\n");
-	printf("echo example message\n");
-}
-
 int
 main(int argc, char **argv)
 {
@@ -54,4 +41,17 @@ main(int argc, char **argv)
 		printf("\n");
 		
 	return 0;
+}
+
+void
+usage(void)
+{
+	printf("Usage: echo [OPTION] [STRING]\n");
+	printf("Display a line of text.\n");
+	puts("\n");
+	printf(" -n\tdo not output the trailing newline\n");
+	printf(" -h\tdisplays this help message\n");
+	puts("\n");
+	printf("Example:\n");
+	printf("echo example message\n");
 }

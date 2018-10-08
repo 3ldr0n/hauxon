@@ -1,5 +1,41 @@
 #include "cat.h"
 
+int
+main(int argc, char **argv)
+{
+	int opt;
+	int n = 0;
+
+	while ((opt = getopt(argc, argv, "nh")) != -1) {
+		switch (opt) {
+		case 'n':
+			n = 1;
+			break;
+		case 'h':
+			usage();
+			return 0;
+		default:
+			usage();
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	if (optind >= argc) {
+		cat(stdin, n);
+		return 0;
+	}
+
+	argc -= optind;
+	char **i = &argv[optind];
+	for ( ; *i ;i++) {
+		FILE *fp = fopen_s(*i, "r");
+		cat(fp, n);
+		fclose(fp);
+	}
+
+    return 0;
+}
+
 static FILE
 *fopen_s(char *filename, char *open_mode)
 {
@@ -44,40 +80,4 @@ usage(void)
 	puts("\n");
 	printf("Example:\n");
 	printf("cat -n TestFile\n");
-}
-
-int
-main(int argc, char **argv)
-{
-	int opt;
-	int n = 0;
-
-	while ((opt = getopt(argc, argv, "nh")) != -1) {
-		switch (opt) {
-		case 'n':
-			n = 1;
-			break;
-		case 'h':
-			usage();
-			return 0;
-		default:
-			usage();
-			exit(EXIT_FAILURE);
-		}
-	}
-
-	if (optind >= argc) {
-		cat(stdin, n);
-		return 0;
-	}
-
-	argc -= optind;
-	char **i = &argv[optind];
-	for ( ; *i ;i++) {
-		FILE *fp = fopen_s(*i, "r");
-		cat(fp, n);
-		fclose(fp);
-	}
-
-    return 0;
 }

@@ -3,14 +3,10 @@
 
 #define PROGRAM "yes"
 
-void
-usage(void)
-{
-	printf("Usage: yes [STRING]\n");
-	printf("Repeatedly output a line with STRING, or just 'y'\n");
-}
+void usage(void);
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 	int opt;
 	while ((opt = getopt(argc, argv, "h")) != -1) {
@@ -33,4 +29,11 @@ int main(int argc, char **argv)
 	}
 
 	return 0;
+}
+
+void
+usage(void)
+{
+	printf("Usage: yes [STRING]\n");
+	printf("Repeatedly output a line with STRING, or just 'y'\n");
 }
