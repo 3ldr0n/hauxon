@@ -25,7 +25,6 @@ main(int argc, char **argv)
 		return 0;
 	}
 
-	argc -= optind;
 	char **i = &argv[optind];
 	for ( ; *i ;i++) {
 		FILE *fp = fopen_s(*i, "r");
