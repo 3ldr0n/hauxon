@@ -42,7 +42,7 @@ static FILE
     fp = fopen(filename, open_mode);
     if (fp == NULL) {
 		fprintf(stderr, "Can't access file.\n");
-		exit(-1);
+		exit(EXIT_FAILURE);
     }
 
 	return fp;

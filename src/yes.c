@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #define PROGRAM "yes"
@@ -14,6 +15,9 @@ main(int argc, char **argv)
 		case 'h':
 			usage();
 			return 0;
+		default:
+			usage();
+			exit(EXIT_FAILURE);
 		}
 	}
 
