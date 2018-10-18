@@ -18,5 +18,4 @@ I'm using [tcc](https://bellard.org/tcc/), so make sure to change the compiler i
 
 ## WIP (Work In Progress)
 
-- cat
 - ls
