@@ -1,31 +1,37 @@
 CC=tcc
 CFLAGS=-std=c11 -Wall -I../include
-DEPS=cat.h
-CAT_OBJ=cat.o
+SRC_DIR=src
+BIN_DIR=bin
 CAT_SRCS=cat.c
 YES_SRCS=yes.c
 ECHO_SRCS=echo.c
+TRUE_SRCS=true.c
+FALSE_SRCS=false.c
 
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+%: src/%.c
+	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
 
-all:
-	mkdir -p bin
-	cd src/ && $(CC) $(CAT_SRCS) $(CFLAGS) -o ../bin/cat
-	cd src/ && $(CC) $(YES_SRCS) $(CFLAGS) -o ../bin/yes
-	cd src/ && $(CC) $(ECHO_SRCS) $(CFLAGS) -o ../bin/echo
+all: cat yes echo true false
 
 cat:
 	mkdir -p bin
-	cd src/ && $(CC) $(CAT_SRCS) $(CFLAGS) -o ../bin/cat
+	cd src/ && $(CC) $(CAT_SRCS) $(CFLAGS) -o ../$(BIN_DIR)/cat
 
 yes:
 	mkdir -p bin
-	cd src/ && $(CC) $(YES_SRCS) $(CFLAGS) -o ../bin/yes
+	cd src/ && $(CC) $(YES_SRCS) $(CFLAGS) -o ../$(BIN_DIR)/yes
 
 echo:
 	mkdir -p bin
-	cd src/ && $(CC) $(ECHO_SRCS) $(CFLAGS) -o ../bin/echo
+	cd src/ && $(CC) $(ECHO_SRCS) $(CFLAGS) -o ../$(BIN_DIR)/echo
+
+true:
+	mkdir -p bin
+	cd src/ && $(CC) $(TRUE_SRCS) $(CFLAGS) -o ../$(BIN_DIR)/true
+
+false:
+	mkdir -p bin
+	cd src/ && $(CC) $(FALSE_SRCS) $(CFLAGS) -o ../$(BIN_DIR)/false
 
 clean:
-	rm -rf bin
+	rm bin/*
