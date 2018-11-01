@@ -12,23 +12,23 @@ all: cat yes echo true false
 
 cat:
 	mkdir -p bin
-	$(CC) src/$(CAT_SRCS) $(CFLAGS) -o ./$(BINDIR)/cat
+	$(CC) $(SRC_DIR)/$(CAT_SRCS) $(CFLAGS) -o ./$(BINDIR)/cat
 
 yes:
 	mkdir -p bin
-	$(CC) src/$(YES_SRCS) $(CFLAGS) -o ./$(BINDIR)/yes
+	$(CC) $(SRC_DIR)/$(YES_SRCS) $(CFLAGS) -o ./$(BINDIR)/yes
 
 echo:
 	mkdir -p bin
-	$(CC) src/$(ECHO_SRCS) $(CFLAGS) -o ./$(BINDIR)/echo
+	$(CC) $(SRC_DIR)/$(ECHO_SRCS) $(CFLAGS) -o ./$(BINDIR)/echo
 
 true:
 	mkdir -p bin
-	$(CC) src/$(TRUE_SRCS) $(CFLAGS) -o ./$(BINDIR)/true
+	$(CC) $(SRC_DIR)/$(TRUE_SRCS) $(CFLAGS) -o ./$(BINDIR)/true
 
 false:
 	mkdir -p bin
-	$(CC) src/$(FALSE_SRCS) $(CFLAGS) -o ./$(BINDIR)/false
+	$(CC) $(SRC_DIR)/$(FALSE_SRCS) $(CFLAGS) -o ./$(BINDIR)/false
 
 clean:
 	rm bin/*
