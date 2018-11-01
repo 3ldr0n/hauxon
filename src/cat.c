@@ -4,7 +4,7 @@ int
 main(int argc, char **argv)
 {
 	int opt;
-	int n = 0;
+	uint8_t n = 0;
 
 	while ((opt = getopt(argc, argv, "nh")) != -1) {
 		switch (opt) {
@@ -49,7 +49,7 @@ static FILE
 }
 
 static void
-cat(FILE *in, int n)
+cat(FILE *in, uint8_t n)
 {
 	ssize_t read;
 	char *buff = NULL;
