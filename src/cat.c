@@ -49,7 +49,7 @@ static FILE
 }
 
 static void
-cat(FILE *in, int n)
+cat(FILE *in, uint8_t n)
 {
 	ssize_t read;
 	char *buff = NULL;
