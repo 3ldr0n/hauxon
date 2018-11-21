@@ -1,3 +1,7 @@
+#ifndef CAT_H
+#define CAT_H
+#endif
+
 #define _GNU_SOURCE
 
 #include <stdio.h>
