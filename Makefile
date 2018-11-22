@@ -10,25 +10,9 @@ FALSE_SRCS=false.c
 
 all: cat yes echo true false
 
-cat:
+%: $(SRC_DIR)/%.c
 	mkdir -p bin
-	$(CC) $(SRC_DIR)/$(CAT_SRCS) $(CFLAGS) -o ./$(BINDIR)/cat
-
-yes:
-	mkdir -p bin
-	$(CC) $(SRC_DIR)/$(YES_SRCS) $(CFLAGS) -o ./$(BINDIR)/yes
-
-echo:
-	mkdir -p bin
-	$(CC) $(SRC_DIR)/$(ECHO_SRCS) $(CFLAGS) -o ./$(BINDIR)/echo
-
-true:
-	mkdir -p bin
-	$(CC) $(SRC_DIR)/$(TRUE_SRCS) $(CFLAGS) -o ./$(BINDIR)/true
-
-false:
-	mkdir -p bin
-	$(CC) $(SRC_DIR)/$(FALSE_SRCS) $(CFLAGS) -o ./$(BINDIR)/false
+	$(CC) $(SRC_DIR)/$@.c $(CFLAGS) -o ./$(BINDIR)/$@
 
 clean:
 	rm bin/*
