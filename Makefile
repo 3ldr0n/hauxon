@@ -14,5 +14,8 @@ all: cat yes echo true false
 	mkdir -p bin
 	$(CC) $(SRC_DIR)/$@.o $(CFLAGS) -o ./$(BIN_DIR)/$@
 
+.PRECIOUS: %.o
+
 clean:
 	rm bin/*
+	rm src/*.o
