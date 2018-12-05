@@ -1,6 +1,5 @@
 #ifndef CAT_H
 #define CAT_H
-#endif
 
 #define _GNU_SOURCE
 
@@ -16,3 +15,5 @@
 static FILE *fopen_s(char *filename, char *open_mode);
 static void cat(FILE *in, uint8_t n);
 void usage(void);
+
+#endif
