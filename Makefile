@@ -1,5 +1,5 @@
 CC=tcc
-CFLAGS=-std=c11 -Wall -I./include
+CFLAGS=-std=c11 -Wall
 SRC_DIR=src
 BIN_DIR=bin
 
