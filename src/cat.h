@@ -1,12 +1,13 @@
 #ifndef CAT_H
 #define CAT_H
 
-#define _GNU_SOURCE
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <features.h>
+
+#define _POSIX_C_SOURCE >= 200809L || _XOPEN_SOURCE >= 700
 
 #define PROGRAM "cat"
 
