@@ -3,7 +3,7 @@ CFLAGS=-std=c11 -Wall -I./include
 SRC_DIR=src
 BIN_DIR=bin
 
-all: cat yes echo true false
+all: cat yes echo true false head
 
 %: $(SRC_DIR)/%.o
 	mkdir -p $(BIN_DIR)
