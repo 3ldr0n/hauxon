@@ -1,6 +1,6 @@
 #include "common.h"
 
-void *malloc_s(size_t size)
+void *smalloc(size_t size)
 {
 	if (!size)
 		return NULL;
