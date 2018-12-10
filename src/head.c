@@ -71,4 +71,6 @@ head(FILE *in, uint8_t n)
 			printf("%s", buff);
 		i++;
 	}
+
+	free(buff);
 }

@@ -25,9 +25,9 @@ main(int argc, char **argv)
 		return 0;
 	}
 
-	char **i = &argv[optind];
-	for ( ; *i ;i++) {
-		FILE *fp = fopen_s(*i, "r");
+	char **file = &argv[optind];
+	for ( ; *file ;file++) {
+		FILE *fp = fopen_s(*file, "r");
 		cat(fp, n);
 		fclose(fp);
 	}
