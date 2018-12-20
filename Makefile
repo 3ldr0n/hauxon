@@ -1,5 +1,5 @@
-CC=tcc
-CFLAGS=-std=c11 -Wall -Wextra
+CC=clang
+CFLAGS=-Wall -Wextra
 SRC_DIR=src
 BIN_DIR=bin
 

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 int
-main(int argc, char **argv)
+main()
 {
 	return EXIT_FAILURE;
 }
