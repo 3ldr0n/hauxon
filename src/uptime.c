@@ -4,7 +4,6 @@
 
 int main(int argc, char **argv)
 {
-
 	struct sysinfo info;
 	int error = sysinfo(&info);
 	if (error) {

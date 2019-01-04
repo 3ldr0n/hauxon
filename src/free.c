@@ -4,17 +4,16 @@
 
 int main(int argc, char **argv)
 {
-
-	struct sysinfo sys;
-	int error = sysinfo(&sys);
+	struct sysinfo info;
+	int error = sysinfo(&info);
 	if (error) {
 		fprintf(stderr, "Code error: %d\n", error);
 		exit(EXIT_FAILURE);
 	}
 
 	printf("\t\ttotal\t\tfree\n");
-	printf("Mem:\t\t%lu\t%lu\n", sys.totalram, sys.freeram);
-	printf("Swap:\t\t%lu\t%lu\n", sys.totalswap, sys.freeswap);
+	printf("Mem:\t\t%lu\t%lu\n", info.totalram, info.freeram);
+	printf("Swap:\t\t%lu\t%lu\n", info.totalswap, info.freeswap);
 
 	return 0;
 }
