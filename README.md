@@ -24,7 +24,7 @@ I'm using [tcc](https://bellard.org/tcc/), so make sure to change the compiler i
 
 - ls
 - tail
-- free
+- free (-h option)
 
 ## Done
 
