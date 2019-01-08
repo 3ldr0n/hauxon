@@ -10,10 +10,8 @@ I'm using [tcc](https://bellard.org/tcc/), so make sure to change the compiler i
 
 - uname
 - head
-- tail
 - tac
 - hostname
-- uptime
 - chmod
 - mv
 - ln
