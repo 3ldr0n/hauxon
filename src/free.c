@@ -15,10 +15,15 @@ int main(int argc, char **argv)
 {
     int opt;
     int unit = 1;
-    while ((opt = getopt(argc, argv, "m")) != -1) {
+    while ((opt = getopt(argc, argv, "kmg")) != -1) {
         switch (opt) {
+        case 'k':
+            break;
         case 'm':
             unit = 1024;
+            break;
+        case 'g':
+            unit = 1024*1024;
             break;
         default:
             usage();

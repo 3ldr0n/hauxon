@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/sysinfo.h>
 
-int main(int argc, char **argv)
+int main()
 {
 	struct sysinfo info;
 	int error = sysinfo(&info);
