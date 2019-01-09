@@ -69,8 +69,10 @@ void xfree(int unit)
 
 void usage(void)
 {
-    printf("Usage: free [OPTIONS]\n");
+    printf("\nUsage: free [OPTIONS]\n");
     printf("Shows amount of memory is being used.\n");
     puts("\n");
+    printf(" -k\tdisplay numbers in kibibytes.\n");
     printf(" -m\tdisplay numbers in megibytes.\n");
+    printf(" -g\tdisplay numbers in gibibytes.\n");
 }
