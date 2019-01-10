@@ -9,7 +9,6 @@ I'm using [tcc](https://bellard.org/tcc/), so make sure to change the compiler i
 ## To implement
 
 - uname
-- head
 - tac
 - hostname
 - chmod
