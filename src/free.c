@@ -81,12 +81,12 @@ void pretty_free()
 		exit(EXIT_FAILURE);
 	}
 
-    float totalram = (float)(info.totalram * info.mem_unit) / 1024;
-    float freeram = (float)(info.freeram * info.mem_unit) / 1024;
-    float bufferram = (float)(info.bufferram * info.mem_unit) / 1024;
+    float totalram = (info.totalram * info.mem_unit) / 1024;
+    float freeram = (info.freeram * info.mem_unit) / 1024;
+    float bufferram = (info.bufferram * info.mem_unit) / 1024;
 
-    float totalswap = (float)(info.totalswap * info.mem_unit) / 1024;
-    float freeswap = (float)(info.freeswap * info.mem_unit) / 1024;
+    float totalswap = (info.totalswap * info.mem_unit) / 1024;
+    float freeswap = (info.freeswap * info.mem_unit) / 1024;
 
     float usedram = totalram - freeram - bufferram;
     float usedswap = totalswap - freeswap;
