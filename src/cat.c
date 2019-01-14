@@ -75,8 +75,4 @@ usage(void)
 	puts("\n");
 	printf(" -n\tnumber output lines\n");
 	printf(" -h\tdisplays this help message\n");
-
-	puts("\n");
-	printf("Example:\n");
-	printf("cat -n TestFile\n");
 }
