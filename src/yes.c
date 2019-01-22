@@ -6,7 +6,7 @@
 
 #define PROGRAM "yes"
 
-void usage(void);
+static void usage(void);
 
 int
 main(int argc, char **argv)
@@ -37,7 +37,7 @@ main(int argc, char **argv)
 	return 0;
 }
 
-void
+static void
 usage(void)
 {
 	printf("Usage: yes [STRING]\n");

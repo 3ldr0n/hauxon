@@ -8,9 +8,9 @@
 
 #define PROGRAM "free"
 
-void usage(void);
-void xfree(int unit);
-void pretty_free();
+static void usage(void);
+static void xfree(int unit);
+static void pretty_free();
 
 int main(int argc, char **argv)
 {
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
  * Displays the amount of free/used memory.
  * unit parameter decides in which format the memory will be displayed.
  */
-void xfree(int unit)
+static void xfree(int unit)
 {
 	struct sysinfo info;
 	int error = sysinfo(&info);
@@ -71,7 +71,7 @@ void xfree(int unit)
            totalswap/unit, freeswap/unit, usedswap/unit);
 }
 
-void pretty_free()
+static void pretty_free()
 {
 	int unit = 1024*1024;
 	struct sysinfo info;
@@ -99,7 +99,7 @@ void pretty_free()
            totalswap/unit, freeswap/unit, usedswap/unit);
 }
 
-void usage(void)
+static void usage(void)
 {
     printf("\nUsage: free [OPTIONS]\n");
     printf("Shows amount of memory is being used.\n");

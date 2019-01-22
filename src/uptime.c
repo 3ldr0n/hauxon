@@ -7,8 +7,8 @@
 
 #define PROGRAM "uptime"
 
-int uptime(int pretty);
-void usage(void);
+static int uptime(int pretty);
+static void usage(void);
 
 int main(int argc, char **argv)
 {
@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-int uptime(int pretty)
+static int uptime(int pretty)
 {
 	struct sysinfo info;
 	int error = sysinfo(&info);
@@ -63,7 +63,7 @@ int uptime(int pretty)
 	return 0;
 }
 
-void usage(void)
+static void usage(void)
 {
     printf("\nUsage: uptime [OPTIONS]\n");
     printf("Displays system uptime.\n");

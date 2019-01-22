@@ -11,6 +11,6 @@
 
 static FILE *fopen_s(char *filename, char *open_mode);
 static void cat(FILE *in, uint8_t n);
-void usage(void);
+static void usage(void);
 
 #endif

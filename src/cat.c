@@ -67,7 +67,7 @@ cat(FILE *in, uint8_t n)
 	free(buff);
 }
 
-void
+static void
 usage(void)
 {
 	printf("Usage: cat [OPTION] [FILE]\n");
