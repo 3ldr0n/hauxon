@@ -9,18 +9,23 @@
 
 static void head(FILE *in, uint8_t n);
 static FILE *fopen_s(char *filename, char *open_mode);
+static void usage(void);
 
 int main(int argc, char **argv)
 {
 	int opt;
 	uint8_t n = 0;
 
-	while ((opt = getopt(argc, argv, "n")) != -1) {
+	while ((opt = getopt(argc, argv, "nh")) != -1) {
 		switch (opt) {
 		case 'n':
 			n = 1;
 			break;
+        case 'h':
+            usage();
+            return 0;
 		default:
+            usage();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -73,4 +78,13 @@ head(FILE *in, uint8_t n)
 	}
 
 	free(buff);
+}
+
+static void usage(void)
+{
+    printf("Usage: head [OPTION] [FILE]\n");
+	printf("Displays first ten lines of a file.\n");
+	puts("\n");
+	printf(" -n\tnumber output lines\n");
+	printf(" -h\tdisplays this help message\n");
 }
