@@ -55,7 +55,7 @@ static int uptime(int pretty)
 	}
 
 	if (hours > 24) {
-		printf("Up %d days, %d hours and %d minutes\n", hours/24, hours, minutes);
+		printf("Up %d days, %d hours and %d minutes\n", hours/24, hours%24, minutes);
 	} else {
 		printf("Up %d hours and %d minutes\n", hours, minutes);
 	}
