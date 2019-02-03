@@ -1,4 +1,4 @@
-CC=tcc
+CC=gcc
 CFLAGS+=-Wall -Wextra
 SRC_DIR=src
 BIN_DIR=bin
