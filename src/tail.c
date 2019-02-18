@@ -59,17 +59,18 @@ tail(FILE *in, uint8_t n)
     ssize_t read;
     char *buff = NULL;
     size_t size = 0;
-    int i  = 0;
-    char *file_content[10];
+    char **file_content = malloc(10*sizeof(char *));
 
+    for (int i = 0;i < 10;i++)
+        *(file_content+i) = malloc(sizeof(char *));
+
+    int i  = 0;
     while ((read = getline(&buff, &size, in)) != -1) {
         if (i == 10)
             break;
 
         file_content[i] = buff;
+        printf("%s", *(file_content+i));
         i++;
     }
-
-    printf("%d", i);
-    printf("%s", file_content[0]);
 }
