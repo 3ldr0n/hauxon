@@ -1,25 +1,25 @@
 #define _GNU_SOURCE
 
 #include <stdio.h>
-#include <stdint.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #define PROGRAM "head"
 
-static void head(FILE *in, uint8_t n);
+static void head(FILE *in, bool n);
 static FILE *fopen_s(char *filename, char *open_mode);
 static void usage(void);
 
 int main(int argc, char **argv)
 {
 	int opt;
-	uint8_t n = 0;
+	bool n = false;
 
 	while ((opt = getopt(argc, argv, "nh")) != -1) {
 		switch (opt) {
 		case 'n':
-			n = 1;
+			n = true;
 			break;
         case 'h':
             usage();
@@ -59,7 +59,7 @@ static FILE
 }
 
 static void
-head(FILE *in, uint8_t n)
+head(FILE *in, bool n)
 {
 	ssize_t read;
 	char *buff = NULL;

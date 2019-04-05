@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <stdbool.h>
 #include <unistd.h>
 #include <features.h>
 
 #define PROGRAM "cat"
 
 static FILE *fopen_s(char *filename, char *open_mode);
-static void cat(FILE *in, uint8_t n);
+static void cat(FILE *in, bool n);
 static void usage(void);
 
 int
 main(int argc, char **argv)
 {
 	int opt;
-	uint8_t n = 0;
+	bool n = false;
 
 	while ((opt = getopt(argc, argv, "nh")) != -1) {
 		switch (opt) {
 		case 'n':
-			n = 1;
+			n = true;
 			break;
 		case 'h':
 			usage();
@@ -59,7 +59,7 @@ static FILE
 }
 
 static void
-cat(FILE *in, uint8_t n)
+cat(FILE *in, bool n)
 {
 	ssize_t read;
 	char *buff = NULL;
