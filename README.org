@@ -1,8 +1,8 @@
-# hauxon
+* hauxon
 
 Creating some coreutils programs.
 
-## To implement
+** To implement
 
 - uname
 - tac
@@ -15,12 +15,12 @@ Creating some coreutils programs.
 - wget
 - ping
 
-## WIP (Work In Progress)
+** WIP (Work In Progress)
 
 - ls
 - tail
 
-## Done
+** Done
 
 - cat
 - true
