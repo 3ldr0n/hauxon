@@ -18,7 +18,6 @@ Creating some coreutils programs.
 ** WIP (Work In Progress)
 
 - ls
-- tail
 
 ** Done
 
@@ -30,3 +29,4 @@ Creating some coreutils programs.
 - head
 - uptime
 - free
+- tail
