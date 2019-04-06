@@ -4,7 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define PROGRAM "tail"
+#define PROGRAM "tac"
 
 static void tail(FILE *in);
 static FILE *fopen_s(char *filename, char *open_mode);
@@ -64,7 +64,8 @@ tail(FILE *in)
         strcpy(file_content[i], buff);
     }
 
-    for (int j = (i-10);j < i;j++) {
-        printf("%s", file_content[j]);
+    for (int j = i;j >= 0;j--) {
+        if (file_content[j] != NULL)
+            printf("%s", file_content[j]);
     }
 }

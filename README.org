@@ -5,7 +5,6 @@ Creating some coreutils programs.
 ** To implement
 
 - uname
-- tac
 - hostname
 - chmod
 - mv
@@ -30,3 +29,4 @@ Creating some coreutils programs.
 - uptime
 - free
 - tail
+- tac
