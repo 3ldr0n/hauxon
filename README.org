@@ -1,6 +1,7 @@
 * hauxon
 
-Creating some coreutils programs.
+Creating some basic unix utilities.
+
 
 ** To implement
 
