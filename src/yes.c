@@ -1,5 +1,3 @@
-#define _GNU_SOURCE
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,8 +6,7 @@
 
 static void usage(void);
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int opt;
 	while ((opt = getopt(argc, argv, "h")) != -1) {
@@ -37,8 +34,7 @@ main(int argc, char **argv)
 	return 0;
 }
 
-static void
-usage(void)
+static void usage(void)
 {
 	printf("Usage: yes [STRING]\n");
 	printf("Repeatedly output a line with STRING, or just 'y'\n");

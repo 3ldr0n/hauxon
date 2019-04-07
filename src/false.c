@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
-int main() {
+int main()
+{
 	return EXIT_FAILURE;
 }

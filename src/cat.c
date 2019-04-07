@@ -10,8 +10,7 @@ static FILE *fopen_s(char *filename, char *open_mode);
 static void cat(FILE *in, bool n);
 static void usage(void);
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int opt;
 	bool n = false;
@@ -45,8 +44,7 @@ main(int argc, char **argv)
     return 0;
 }
 
-static FILE
-*fopen_s(char *filename, char *open_mode)
+static FILE *fopen_s(char *filename, char *open_mode)
 {
 	FILE *fp;
     fp = fopen(filename, open_mode);
@@ -58,8 +56,7 @@ static FILE
 	return fp;
 }
 
-static void
-cat(FILE *in, bool n)
+static void cat(FILE *in, bool n)
 {
 	ssize_t read;
 	char *buff = NULL;
@@ -77,8 +74,7 @@ cat(FILE *in, bool n)
 	free(buff);
 }
 
-static void
-usage(void)
+static void usage(void)
 {
 	printf("Usage: cat [OPTION] [FILE]\n");
 	printf("Concatenate files to standard output.\n");

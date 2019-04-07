@@ -8,14 +8,19 @@
 
 static void tail(FILE *in);
 static FILE *fopen_s(char *filename, char *open_mode);
+static void usage(void);
 
 int main(int argc, char **argv)
 {
     int opt;
 
-    while ((opt = getopt(argc, argv, "n")) != -1) {
+    while ((opt = getopt(argc, argv, "h")) != -1) {
         switch (opt) {
+        case 'h':
+            usage();
+            exit(EXIT_SUCCESS);
         default:
+            usage();
             exit(EXIT_FAILURE);
         }
     }
@@ -68,4 +73,14 @@ tail(FILE *in)
         if (file_content[j] != NULL)
             printf("%s", file_content[j]);
     }
+
+    free(file_content);
+}
+
+static void usage(void)
+{
+    printf("Usage: tail [OPTION] [FILE]\n");
+	printf("Displays reversed content of a file.\n");
+	puts("\n");
+	printf(" -h\tdisplays this help message\n");
 }

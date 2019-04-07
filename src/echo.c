@@ -1,4 +1,3 @@
-#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -7,8 +6,7 @@
 
 static void usage(void);
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int opt;
 	int n = 0;
@@ -32,9 +30,9 @@ main(int argc, char **argv)
 		return 0;
 	}
 
-	char **i = &argv[optind];
-	for ( ; *i ;i++)
-		printf("%s ", *i);
+	char **words = &argv[optind];
+	for ( ; *words ;words++)
+		printf("%s ", *words);
 
 	if (!n)
 		printf("\n");
@@ -42,8 +40,7 @@ main(int argc, char **argv)
 	return 0;
 }
 
-static void
-usage(void)
+static void usage(void)
 {
 	printf("Usage: echo [OPTION] [STRING]\n");
 	printf("Display a line of text.\n");
