@@ -103,7 +103,7 @@ static void usage(void)
     printf("Shows amount of memory is being used.\n");
     puts("\n");
     printf(" -k\tdisplay numbers in kibibytes.\n");
-    printf(" -m\tdisplay numbers in megibytes.\n");
+    printf(" -m\tdisplay numbers in mebibytes.\n");
     printf(" -g\tdisplay numbers in gibibytes.\n");
     printf(" -h\tdisplay numbers in a pretty way.\n");
 }
