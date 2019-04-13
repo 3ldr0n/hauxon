@@ -70,8 +70,10 @@ tail(FILE *in)
     }
 
     for (int j = i;j >= 0;j--) {
-        if (file_content[j] != NULL)
+        if (file_content[j] != NULL) {
             printf("%s", file_content[j]);
+            free(file_content[j]);
+        }
     }
 
     free(file_content);
