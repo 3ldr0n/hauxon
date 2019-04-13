@@ -9,6 +9,7 @@ Creating some basic unix utilities.
 - hostname
 - chmod
 - mv
+- diff
 - ln
 - mkdir
 - touch
