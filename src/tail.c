@@ -67,9 +67,11 @@ static void tail(FILE *in)
         strcpy(file_content[i], buff);
     }
 
-    for (int j = (i-10);j < i;j++) {
+    for (int j = (i-10);j < i;j++)
         printf("%s", file_content[j]);
-    }
+
+    for (int j = 0;j < i;j++)
+        free(file_content[j]);
 
     free(file_content);
 }

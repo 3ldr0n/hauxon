@@ -3,7 +3,7 @@ CFLAGS+=-Wall -Wextra -Werror
 SRC_DIR=src
 BIN_DIR=bin
 
-all: cat yes echo true false head uptime free
+all: cat yes echo true false head tail uptime free tac
 
 %: $(SRC_DIR)/%.o
 	mkdir -p $(BIN_DIR)
