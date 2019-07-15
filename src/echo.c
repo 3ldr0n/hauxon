@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 
 	if (!n)
 		printf("\n");
-		
+
 	return 0;
 }
 

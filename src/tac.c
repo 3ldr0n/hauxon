@@ -40,8 +40,7 @@ int main(int argc, char **argv)
     return 0;
 }
 
-static FILE
-*fopen_s(char *filename, char *open_mode)
+static FILE *fopen_s(char *filename, char *open_mode)
 {
     FILE *fp;
     fp = fopen(filename, open_mode);
@@ -53,8 +52,7 @@ static FILE
     return fp;
 }
 
-static void
-tail(FILE *in)
+static void tail(FILE *in)
 {
     ssize_t read;
     char *buff = NULL;

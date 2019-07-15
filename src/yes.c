@@ -5,6 +5,7 @@
 #define PROGRAM "yes"
 
 static void usage(void);
+void yes(int argc, char **argv);
 
 int main(int argc, char **argv)
 {
@@ -20,18 +21,22 @@ int main(int argc, char **argv)
 		}
 	}
 
+    yes(argc, argv);
+	return 0;
+}
+
+void yes(int argc, char **argv)
+{
 	if (argc == 1) {
 		for (;;)
 			printf("y\n");
 	} else {
 		for (;;) {
-			for (int i=1;i<argc;i++)
+			for (int i = 1;i < argc;i++)
 				printf("%s ", argv[i]);
 			printf("\n");
 		}
 	}
-
-	return 0;
 }
 
 static void usage(void)

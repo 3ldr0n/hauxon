@@ -1,6 +1,4 @@
-#include <stdlib.h>
-
 int main()
 {
-	return EXIT_SUCCESS;
+	return 1;
 }
