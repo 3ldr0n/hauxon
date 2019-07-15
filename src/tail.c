@@ -74,6 +74,7 @@ static void tail(FILE *in)
         free(file_content[j]);
 
     free(file_content);
+    free(buff);
 }
 
 static void usage(void)
